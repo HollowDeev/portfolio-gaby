@@ -56,18 +56,33 @@
     <div class="fixed inset-0 bg-star bg-star-right pointer-events-none z-0"></div>
 
     <!-- Header/Navigation -->
-    <header class="relative z-10 bg-white/80 backdrop-blur-sm border-b border-gray-200">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
-            <div class="flex items-center">
-                <img src="assets/logotipo.png" alt="Gaby Navi" class="h-12">
+    <header class="relative z-10 bg-white border-b border-gray-300">
+        <div class="flex items-end justify-between h-24">
+            <!-- Empty Space Left -->
+            <div class="h-full border-r border-gray-300 w-20"></div>
+            
+            <!-- Logo Section with Border -->
+            <div class="flex items-center h-full  px-8">
+                <img src="assets/logotipo.png" alt="Gaby Navi" class="h-14">
             </div>
-            <div class="flex gap-8 items-center">
-                <a href="#home" class="text-sm font-medium hover:text-gray-600 transition uppercase tracking-wide border border-gray-300 px-6 py-2 rounded-full">Home</a>
-                <a href="#sobre" class="text-sm font-medium hover:text-gray-600 transition uppercase tracking-wide border border-gray-300 px-6 py-2 rounded-full">Sobre Mim</a>
-                <a href="#portfolio" class="text-sm font-medium hover:text-gray-600 transition uppercase tracking-wide border border-gray-300 px-6 py-2 rounded-full">Portfólio</a>
-                <a href="#contato" class="text-sm font-medium hover:text-gray-600 transition uppercase tracking-wide border border-gray-800 px-6 py-2 rounded-full bg-white">Entre em<br>Contato</a>
+            
+            <!-- Navigation Links -->
+            <nav class="flex items-end h-full flex-1 justify-center gap-3">
+                <a href="#home" class="h-3/4 flex items-center justify-center border-l-[1px] border-r-[1px] border-t-[1px] border-black rounded-t-2xl px-5 text-sm font-medium hover:bg-gray-50 transition uppercase tracking-wider">Home</a>
+                <a href="#sobre" class="h-3/4 flex items-center justify-center border-l-[1px] border-r-[1px] border-t-[1px] border-black rounded-t-2xl px-5 text-sm font-medium hover:bg-gray-50 transition uppercase tracking-wider">Sobre Mim</a>
+                <a href="#portfolio" class="h-3/4 flex items-center justify-center border-l-[1px] border-r-[1px] border-t-[1px] border-black rounded-t-2xl px-5 text-sm font-medium hover:bg-gray-50 transition uppercase tracking-wider">Portfólio</a>
+            </nav>
+            
+            <!-- Contact Button with Border -->
+            <div class="flex items-center h-full  border-gray-300 px-8">
+                <a href="#contato" class="text-sm font-medium uppercase tracking-wider border-2 border-gray-800 px-8 py-3 rounded-full hover:bg-gray-800 hover:text-white transition">
+                    Entre em<br>Contato
+                </a>
             </div>
-        </nav>
+            
+            <!-- Empty Space Right -->
+            <div class="h-full border-l border-gray-300 w-20"></div>
+        </div>
     </header>
 
     <!-- Hero Section -->
