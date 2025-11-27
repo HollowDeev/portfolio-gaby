@@ -171,6 +171,53 @@
             }
         }
         
+        /* Typewriter effect for hero title */
+        .typewriter {
+            display: inline-block;
+        }
+        
+        .typewriter-cursor {
+            display: inline-block;
+            color: black;
+            animation: blink-caret 0.75s step-end infinite;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink-caret {
+            from, to {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        .typing-animation {
+            animation: typing-forward 2s steps(20) forwards, blink-caret 0.75s step-end infinite;
+        }
+        
+        .deleting-animation {
+            animation: typing-backward 1s steps(20) forwards, blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing-forward {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes typing-backward {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -320,9 +367,8 @@
                     <p class="text-base mb-4 tracking-wide fade-in stagger-1">Olá, eu sou a Gaby Navi,</p>
                     <div class="relative inline-block">
                         <div class="absolute inset-0 w-[500px] h-[500px] -left-24 -top-24 bg-gradient-to-b from-[#75619E] to-[#BD8BAA] rounded-full blur-[120px] opacity-60 scale-in stagger-2"></div>
-                        <h1 class="font-playfair text-7xl font-bold leading-tight mb-8 relative z-10 fade-in-up stagger-3">
-                            DESIGNER<br>
-                            DIGITAL
+                        <h1 class="font-playfair text-7xl font-bold leading-tight mb-8 relative z-10" style="min-height: 180px;">
+                            <span id="typewriter-text" class="typewriter"></span>
                         </h1>
                     </div>
                 </div>
@@ -871,6 +917,69 @@
                 ticking = true;
             }
         });
+    </script>
+    
+    <script>
+        // Typewriter effect for hero title
+        const texts = [
+            'DESIGNER\nDIGITAL',
+            'ESTRATEGISTA\nVISUAL',
+            'DESIGNER DE\nEXPERIÊNCIAS',
+            'EXPLORADORA\nCRIATIVA'
+        ];
+        let currentIndex = 0;
+        let isDeleting = false;
+        let currentText = '';
+        let charIndex = 0;
+        
+        const typewriterElement = document.getElementById('typewriter-text');
+        
+        function typeWriter() {
+            const fullText = texts[currentIndex];
+            
+            if (!isDeleting) {
+                // Typing forward
+                currentText = fullText.substring(0, charIndex);
+                
+                // Replace \n with <br> for line breaks and add cursor
+                typewriterElement.innerHTML = currentText.replace(/\n/g, '<br>') + '<span class="typewriter-cursor">_</span>';
+                
+                charIndex++;
+                
+                if (charIndex > fullText.length) {
+                    // Wait 3 seconds before deleting
+                    setTimeout(() => {
+                        isDeleting = true;
+                        charIndex = fullText.length;
+                        typeWriter();
+                    }, 3000);
+                    return;
+                }
+            } else {
+                // Deleting backward
+                currentText = fullText.substring(0, charIndex);
+                
+                // Replace \n with <br> for line breaks and add cursor
+                typewriterElement.innerHTML = currentText.replace(/\n/g, '<br>') + '<span class="typewriter-cursor">_</span>';
+                
+                charIndex--;
+                
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    charIndex = 0;
+                    currentIndex = (currentIndex + 1) % texts.length;
+                }
+            }
+            
+            // Typing speed
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, speed);
+        }
+        
+        // Start typewriter effect after page loads
+        setTimeout(() => {
+            typeWriter();
+        }, 1000);
     </script>
 
 </body>
