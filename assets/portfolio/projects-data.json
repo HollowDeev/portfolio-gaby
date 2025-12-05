@@ -1,0 +1,86 @@
+{
+  "projects": [
+    {
+      "id": "protese-ampli",
+      "title": "Prótese Ampli",
+      "title-p2": "App + Site",
+      "subtitle": "Projeto acadêmico em grupo, produzido em 2024",
+      "category": "Branding | UX/UI",
+      "coverImage": "Prótese Ampli_Capa.jpg",
+      "projectImage": "Prótese Ampli_projeto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "cuida-bem",
+      "title": "Cuida Bem",
+      "title-p2": "App +60",
+      "subtitle": "Projeto acadêmico em grupo, produzido em 2025",
+      "category": "UX/UI",
+      "coverImage": "Cuida Bem_Capa.jpg",
+      "projectImage": "Cuida Bem_projeto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "starcine",
+      "title": "StarCine",
+      "title-p2": "Totem de Cinema",
+      "subtitle": "Projeto acadêmico individual, produzido em 2024",
+      "category": "UX/UI",
+      "coverImage": "StarCine_Capa.jpg",
+      "projectImage": "Star Cine_proejto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "gamelab",
+      "title": "Gamelab",
+      "title-p2": "Identidade Visual e Social Mídia",
+      "subtitle": "Projeto acadêmico em grupo, produzido em 2024",
+      "category": "Branding",
+      "coverImage": "Gamelab_Capa.jpg",
+      "projectImage": "Gamelab_projeto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "karamello",
+      "title": "Agência Karamello",
+      "title-p2": "Identidade Visual",
+      "subtitle": "Projeto acadêmico em grupo, produzido em 2025",
+      "category": "Branding",
+      "coverImage": "Agencia Karamello_Capa.jpg",
+      "projectImage": "Karamello_projeto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "brotinho",
+      "title": "Pizzaria Brotinho",
+      "title-p2": "Identidade Visual",
+      "subtitle": "Projeto freelance, produzido em 2024",
+      "category": "Branding | Social Media",
+      "coverImage": "Brotinho_Capa.jpg",
+      "projectImage": "Pizzaria Brotinho_projeto.jpg",
+      "hasText": false
+    },
+    {
+      "id": "datas-comemorativas",
+      "title": "Datas Comemorativas",
+      "title-p2": "Freelance de 2025",
+      "subtitle": "Social media",
+      "category": "Social Media",
+      "coverImage": "Datas Comemorativas_Capa.jpg",
+      "projectImage": "Datas Comemorativas_projeto.jpg",
+      "hasText": true,
+      "text": "Atendendo a agência de marketing Karamello, o principal foco dos meus trabalhos foi desenvolver posts voltados a datas comemorativas relevantes para cada cliente, respeitando o posicionamento e o tom de voz de diferentes setores. Entre eles estavam o Supermercado Bom Jesus, Trevo Calçados, Drogaria Popular Prados, VVS Sociedade de Advogados, Advocacia Alves Lima, Padaria Vitório Pascoal e Voyage Café, sempre adaptando o visual e a mensagem para criar conteúdos consistentes, atrativos e alinhados às necessidades de cada marca."
+    },
+    {
+      "id": "omu",
+      "title": "OMU", 
+      "title-p2": "Social media",
+      "subtitle": "Freelance de 2024",
+      "category": "Social Media",
+      "coverImage": "OMU_Capas.jpg",
+      "projectImage": "OMU_projeto.jpg",
+      "hasText": true,
+      "text": "A Olimpíada de Matemática da Unicamp (OMU) é uma competição acadêmica que estimula o estudo da matemática entre estudantes da educação básica, valorizando raciocínio, argumentação e trabalho em equipe. Sua comunicação nas redes sociais tem como objetivo divulgar etapas, orientar participantes e fortalecer a comunidade por meio de conteúdos informativos, celebrativos e educativos. Durante oito meses, atuei como freelancer criando o visual dos posts, contribuindo para tornar essa comunicação mais clara, acessível e alinhada à identidade da OMU."
+    }
+  ]
+}
