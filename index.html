@@ -580,6 +580,7 @@
                     <div class="flex items-center border-b border-gray-300 pb-3 mb-3">
                         <label class="text-sm font-medium text-gray-600 w-20">Assunto:</label>
                         <input 
+                            id="emailSubject"
                             type="text" 
                             placeholder="Que tipo de projeto podemos construir juntos?"
                             class="flex-1 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#75619E]/30 rounded"
@@ -589,6 +590,7 @@
                     <!-- Message Body -->
                     <div class="mt-6">
                         <textarea 
+                            id="emailBody"
                             placeholder="Escreva sua mensagem aqui..."
                             rows="12"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#75619E]/50 focus:border-[#75619E] resize-none"
@@ -615,7 +617,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <button class="bg-[#75619E] hover:bg-[#3F2A53] text-white px-8 py-3 rounded-full font-medium transition-colors flex items-center gap-2">
+                        <button onclick="sendEmail()" class="bg-[#75619E] hover:bg-[#3F2A53] text-white px-8 py-3 rounded-full font-medium transition-colors flex items-center gap-2">
                             <span>Enviar</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -769,6 +771,32 @@
             
             // Limpar o campo de mensagem
             messageInput.value = '';
+        }
+        
+        function sendEmail() {
+            const subject = document.getElementById('emailSubject').value.trim();
+            const body = document.getElementById('emailBody').value.trim();
+            
+            if (body === '') {
+                alert('Por favor, escreva uma mensagem antes de enviar.');
+                return;
+            }
+            
+            const email = 'gabrielanavif@gmail.com';
+            
+            // Codificar o assunto e o corpo do email para URL
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            // Criar a URL mailto
+            const mailtoURL = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+            
+            // Abrir o cliente de email padrão
+            window.location.href = mailtoURL;
+            
+            // Opcional: Limpar os campos após envio
+            // document.getElementById('emailSubject').value = '';
+            // document.getElementById('emailBody').value = '';
         }
     </script>
     
