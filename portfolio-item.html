@@ -659,7 +659,7 @@
     <script>
         // Capturar parâmetro da URL
         const urlParams = new URLSearchParams(window.location.search);
-        const projectName = urlParams.get('project');
+        const projectId = urlParams.get('project');
         
         // Carregar dados do projeto
         async function loadProjectData() {
@@ -667,8 +667,8 @@
                 const response = await fetch('assets/portfolio/projects-data.json');
                 const data = await response.json();
                 
-                // Encontrar projeto pelo título
-                const project = data.projects.find(p => p.title === projectName);
+                // Encontrar projeto pelo ID
+                const project = data.projects.find(p => p.id === projectId);
                 
                 if (project) {
                     // Atualizar título da página
@@ -724,15 +724,15 @@
                     }
                 } else {
                     // Projeto não encontrado nos dados
-                    console.warn('Projeto não encontrado nos dados:', projectName);
-                    document.getElementById('project-title').textContent = projectName || 'Projeto';
+                    console.warn('Projeto não encontrado nos dados:', projectId);
+                    document.getElementById('project-title').textContent = 'Projeto não encontrado';
                 }
             } catch (error) {
                 console.error('Erro ao carregar dados do projeto:', error);
             }
         }
         
-        if (projectName) {
+        if (projectId) {
             loadProjectData();
         }
         
