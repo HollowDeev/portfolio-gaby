@@ -540,13 +540,15 @@
                     
                     <!-- Message Input -->
                     <input 
+                        id="whatsappMessage"
                         type="text" 
                         placeholder="Mensagem" 
                         class="flex-1 bg-white border border-[#75619E]/30 rounded-full px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#75619E]/50 focus:border-[#75619E]"
+                        onkeypress="if(event.key === 'Enter') sendWhatsAppMessage()"
                     />
                     
                     <!-- Send Button -->
-                    <button class="bg-[#75619E] hover:bg-[#3F2A53] text-white rounded-full p-3 transition-colors">
+                    <button onclick="sendWhatsAppMessage()" class="bg-[#75619E] hover:bg-[#3F2A53] text-white rounded-full p-3 transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                         </svg>
@@ -742,6 +744,31 @@
             
             document.getElementById('btnWhatsapp').classList.remove('bg-[#75619E]', 'text-white', 'border-[#3F2A53]');
             document.getElementById('btnWhatsapp').classList.add('bg-white', 'text-black', 'border-black');
+        }
+        
+        function sendWhatsAppMessage() {
+            const messageInput = document.getElementById('whatsappMessage');
+            const message = messageInput.value.trim();
+            
+            if (message === '') {
+                alert('Por favor, digite uma mensagem antes de enviar.');
+                return;
+            }
+            
+            // Formatar o número no formato internacional (sem + e sem espaços)
+            const phoneNumber = '5519991914097';
+            
+            // Codificar a mensagem para URL (substituindo espaços, quebras de linha, etc.)
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Criar a URL do WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abrir em uma nova aba
+            window.open(whatsappURL, '_blank');
+            
+            // Limpar o campo de mensagem
+            messageInput.value = '';
         }
     </script>
     
